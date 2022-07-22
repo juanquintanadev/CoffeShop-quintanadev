@@ -1,0 +1,22 @@
+@use 'variables' as v;
+
+@mixin telefono {
+    @media (min-width: v.$telefono) { 
+        @content;//si o si va este content para que pase los valores que introducimos en la hoja de sass toma todo el contenido que le pasamos
+    }
+}
+@mixin tablet {
+    @media (min-width: v.$tablet) { 
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: v.$desktop) { 
+        @content;
+    }
+}
+@mixin grid($columnas, $espaciado) {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $espaciado;
+}
